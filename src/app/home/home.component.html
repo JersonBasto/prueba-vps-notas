@@ -1,0 +1,85 @@
+<div class="contenedor">
+  <button class="btn btn-primary limpiar-button" (click)="limpiar()">
+    Limpiar
+  </button>
+  <select
+    class="dropdown form-select"
+    [(ngModel)]="seleccion"
+    (change)="onOpcionSeleccionada()"
+  >
+    <option value="">Tipo de Vehiculo</option>
+    <option *ngFor="let opcion of opciones" [value]="opcion">
+      {{ opcion }}
+    </option>
+  </select>
+  <select
+    class="dropdown form-select"
+    [(ngModel)]="codigoMarca"
+    (change)="marcaSeleccionada()"
+  >
+    <option value="">Marca</option>
+    <option *ngFor="let marca of marcas" [value]="marca.codigo">
+      {{ marca.nome }}
+    </option>
+  </select>
+  <select
+    class="dropdown form-select"
+    [(ngModel)]="codigoModelo"
+    (change)="codigoModeloSeleccionado()"
+  >
+    <option value="">Modelo</option>
+    <option *ngFor="let modelo of modelos.modelos" [value]="modelo.codigo">
+      {{ modelo.nome }}
+    </option>
+  </select>
+  <select
+    class="dropdown form-select"
+    [(ngModel)]="codigoAnno"
+    (change)="codigoAnnoSeleccionado()"
+  >
+    <option value="">Año</option>
+    <option *ngFor="let anno of annos" [value]="anno.codigo">
+      {{ anno.nome }}
+    </option>
+  </select>
+  <div class="datos">
+    <div class="col1">
+      <label>Marca:</label>
+      <label>Modelo:</label>
+      <label>Año:</label>
+      <label>Combustible:</label>
+      <label>Valor:</label>
+      <button (click)="convertirCOP()" class="btn btn-primary">
+        Convertir COP
+      </button>
+      <label>Impuesto BRL {{ impuesto * 100 }} % :</label>
+      <label>Impuesto COP {{ impuesto * 100 }} % :</label>
+    </div>
+    <div class="col2">
+      <label>{{
+        dataVehiculo?.Marca ? dataVehiculo?.Marca : "Sin seleccion"
+      }}</label>
+      <label>{{
+        dataVehiculo?.Modelo ? dataVehiculo?.Modelo : "Sin seleccion"
+      }}</label>
+      <label>{{
+        dataVehiculo?.AnoModelo ? dataVehiculo?.AnoModelo : "Sin seleccion"
+      }}</label>
+      <label>{{
+        dataVehiculo?.Combustivel ? dataVehiculo?.Combustivel : "Sin seleccion"
+      }}</label>
+      <label>{{
+        dataVehiculo?.Valor ? dataVehiculo?.Valor : "Sin seleccion"
+      }}</label>
+      <label>{{
+        valorVehiculoCOP | currency : "COP" : "symbol" : "4.2-2"
+      }}</label>
+      <label>{{
+        valorVehiculo * impuesto | currency : "BRL" : "symbol" : "4.2-2"
+      }}</label>
+      <label>{{
+        valorVehiculoCOP * impuesto | currency : "COP" : "symbol" : "4.2-2"
+      }}</label>
+    </div>
+  </div>
+</div>

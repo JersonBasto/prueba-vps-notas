@@ -1,0 +1,63 @@
+.contenedor {
+  border: 1px solid black;
+  margin:10px auto auto auto;
+  padding: 20px;
+  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #d3d3d3;
+  width: 50%;
+}
+.limpiar-button{
+    width: 100px;
+    height: 50px;
+    margin: auto;
+}
+.dropdown {
+  width: 40%;
+  height: 40px;
+  margin: 10px auto auto auto;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.label-tittle {
+  margin: 10px auto 2px auto;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  align-items: center;
+}
+.datos {
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+}
+.col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+  margin: auto 10px auto auto;
+}
+.col1 label {
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.col2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+  margin: auto auto auto 10px;
+}
+.col2 label {
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
